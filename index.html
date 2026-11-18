@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Irina compie 30 anni</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#fbfaf8;
+  --ink:#141414;
+  --muted:#8a8782;
+  --line:#e4e1dc;
+  --photo:#d9d6d0;
+  --error:#b3261e;
+  --font:"Inter",-apple-system,"Helvetica Neue",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:34rem;margin:0 auto;padding:0 20px}
+h1,h2,p{margin:0}
+h1{font-size:clamp(2.6rem,9vw,4rem);font-weight:500;letter-spacing:-.035em;line-height:1;text-wrap:balance}
+h2{font-size:.8rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+[hidden]{display:none!important}
+
+.hero{padding:3.5rem 0 4.5rem;display:flex;flex-direction:column;gap:2rem}
+.date{font-size:.8rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.lead{font-size:1.2rem;color:var(--ink);max-width:30ch}
+.photo{position:relative;aspect-ratio:4/5;width:100%;background:var(--photo);border-radius:4px;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.photo path,.photo polyline{fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.btn{font:500 1rem var(--font);background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:1rem 2rem;cursor:pointer;align-self:flex-start;transition:opacity .15s}
+.btn:hover{opacity:.8}
+.btn:disabled{opacity:.5;cursor:default}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
+section{border-top:1px solid var(--line);padding:3rem 0;display:flex;flex-direction:column;gap:2rem}
+.stops{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.stops li{display:grid;grid-template-columns:5rem 1fr;gap:1rem;padding:1.25rem 0;align-items:baseline}
+.stops li+li{border-top:1px solid var(--line)}
+.time{font-variant-numeric:tabular-nums;color:var(--muted)}
+.place{font-size:1.5rem;font-weight:500;letter-spacing:-.02em;line-height:1.2}
+.what{color:var(--muted)}
+
+form{display:flex;flex-direction:column;gap:1.75rem}
+.field{display:flex;flex-direction:column;gap:.6rem;border:0;padding:0;margin:0;min-width:0}
+.field>label,.field>legend{font-weight:500;padding:0}
+.field>legend{margin-bottom:.6rem}
+input[type=text]{font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--ink);border-radius:0;padding:.5rem 0;width:100%}
+input[type=text]:focus{outline:0;border-bottom-width:2px;padding-bottom:calc(.5rem - 1px)}
+.options{display:flex;flex-wrap:wrap;gap:.6rem}
+.option{display:flex;align-items:center;gap:.6rem;border:1px solid var(--line);border-radius:999px;padding:.65rem 1.1rem;cursor:pointer;background:#fff}
+.option input{margin:0;width:1.05rem;height:1.05rem;accent-color:var(--ink)}
+.option:has(input:checked){border-color:var(--ink)}
+.option:has(input:focus-visible){outline:2px solid var(--ink);outline-offset:2px}
+.err{color:var(--error);font-size:.9rem}
+.thanks{font-size:1.5rem;font-weight:500;letter-spacing:-.02em;line-height:1.25}
+.muted{color:var(--muted);font-size:.9rem}
+footer{border-top:1px solid var(--line);padding:2rem 0 3rem;color:var(--muted);font-size:.9rem}
+</style>
+</head>
+<body>
+
+<main class="wrap">
+  <header class="hero">
+    <p class="date">Sabato 12 dicembre</p>
+    <h1>Irina compie 30&nbsp;anni!</h1>
+    <div class="photo">
+      <!-- FOTO: mettere foto.jpg accanto a questo file e togliere il commento dalla riga sotto -->
+      <!-- <img src="foto.jpg" alt="Irina"> -->
+      <svg viewBox="0 0 400 500" aria-hidden="true">
+        <!-- corona -->
+        <polyline points="150,92 158,48 180,74 200,40 220,74 242,48 250,92 150,92"/>
+        <!-- scintille -->
+        <path d="M60 120v28M46 134h28"/>
+        <path d="M338 70v20M328 80h20"/>
+        <path d="M330 400v28M316 414h28M320 404l20 20M340 404l-20 20"/>
+        <!-- palloncino -->
+        <path d="M70 330c-22 0-34 18-34 38s14 40 34 40 34-20 34-40-12-38-34-38zM70 408q-10 24 2 44t-4 40"/>
+        <!-- coriandoli -->
+        <path d="M110 60l8-10M290 40l4 12M360 220l12-4M40 240l10 6M280 460l10-8"/>
+      </svg>
+    </div>
+    <p class="lead">Qui senza una festa non si può. Uniamo le mie due cose preferite: una cena buonissima e ballare con gli amici.</p>
+    <button class="btn" type="button" id="go-rsvp">Io ci sono!</button>
+  </header>
+
+  <section>
+    <h2>Programma</h2>
+    <ol class="stops">
+      <li>
+        <span class="time">20:00</span>
+        <div><p class="place">Circolo Vizioso</p><p class="what">Cena</p></div>
+      </li>
+      <li>
+        <span class="time">00:00</span>
+        <div><p class="place">Boccaccio</p><p class="what">Si balla, da mezzanotte in poi</p></div>
+      </li>
+    </ol>
+  </section>
+
+  <section id="rsvp">
+    <h2>Conferma</h2>
+    <form id="form" novalidate>
+      <div class="field">
+        <label for="nome">Il tuo nome</label>
+        <input type="text" id="nome" name="nome" autocomplete="name">
+        <p class="err" id="err-nome" hidden>Scrivi il tuo nome.</p>
+      </div>
+
+      <fieldset class="field">
+        <legend>Porti un +1?</legend>
+        <div class="options">
+          <label class="option"><input type="radio" name="piu1" id="piu1-no" value="no" checked> No</label>
+          <label class="option"><input type="radio" name="piu1" id="piu1-si" value="si"> Sì</label>
+        </div>
+      </fieldset>
+
+      <div class="field" id="field-chi" hidden>
+        <label for="chi">Chi è il tuo +1?</label>
+        <input type="text" id="chi" name="chi">
+        <p class="err" id="err-chi" hidden>Scrivi chi porti.</p>
+      </div>
+
+      <fieldset class="field">
+        <legend>A cosa vieni?</legend>
+        <div class="options">
+          <label class="option"><input type="checkbox" id="cena" name="cena"> Vengo a cena</label>
+          <label class="option"><input type="checkbox" id="ballo" name="ballo"> Vengo a ballare</label>
+        </div>
+        <p class="err" id="err-cosa" hidden>Scegli almeno una delle due.</p>
+      </fieldset>
+
+      <button class="btn" type="submit" id="send">Io ci sono!</button>
+      <p class="err" id="err-send" hidden>Non sono riuscita a inviare la risposta. Riprova tra poco.</p>
+    </form>
+
+    <div id="done" hidden tabindex="-1">
+      <p class="thanks" id="thanks"></p>
+      <p class="muted" id="preview-note" hidden>Anteprima: le risposte non vengono ancora salvate.</p>
+    </div>
+  </section>
+
+  <footer>Ti aspetto. Irina</footer>
+</main>
+
+<script>
+// Indirizzo a cui inviare le risposte (per esempio un modulo Formspree). Vuoto = solo anteprima.
+const FORM_ENDPOINT = "";
+
+const $ = id => document.getElementById(id);
+
+$("go-rsvp").addEventListener("click", () => {
+  const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  $("rsvp").scrollIntoView({behavior: calm ? "auto" : "smooth"});
+  $("nome").focus({preventScroll: true});
+});
+
+const syncPlusOne = () => { $("field-chi").hidden = !$("piu1-si").checked; };
+document.querySelectorAll('input[name="piu1"]').forEach(r => r.addEventListener("change", syncPlusOne));
+syncPlusOne();
+
+$("form").addEventListener("submit", async e => {
+  e.preventDefault();
+  const r = {
+    nome: $("nome").value.trim(),
+    piu1: $("piu1-si").checked,
+    chi: $("piu1-si").checked ? $("chi").value.trim() : "",
+    cena: $("cena").checked,
+    ballo: $("ballo").checked
+  };
+  const errors = [
+    ["err-nome", !r.nome, "nome"],
+    ["err-chi", r.piu1 && !r.chi, "chi"],
+    ["err-cosa", !r.cena && !r.ballo, "cena"]
+  ];
+  let first = null;
+  for (const [id, bad, focusId] of errors) { $(id).hidden = !bad; if (bad && !first) first = focusId; }
+  if (first) { $(first).focus(); return; }
+
+  $("err-send").hidden = true;
+  if (FORM_ENDPOINT) {
+    $("send").disabled = true;
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: "POST",
+        headers: {"Content-Type": "application/json", "Accept": "application/json"},
+        body: JSON.stringify({
+          nome: r.nome,
+          "+1": r.piu1 ? r.chi : "no",
+          cena: r.cena ? "sì" : "no",
+          ballo: r.ballo ? "sì" : "no"
+        })
+      });
+      if (!res.ok) throw new Error(res.status);
+    } catch (err) {
+      $("send").disabled = false;
+      $("err-send").hidden = false;
+      return;
+    }
+  } else {
+    $("preview-note").hidden = false;
+  }
+
+  const where = r.cena && r.ballo ? "a cena e poi a ballare" : r.cena ? "a cena" : "a ballare";
+  $("thanks").textContent = "Grazie, " + r.nome + "! Ci vediamo " + where + (r.piu1 ? ", insieme a " + r.chi : "") + ".";
+  $("form").hidden = true;
+  $("done").hidden = false;
+  $("done").focus();
+});
+</script>
+</body>
+</html>
