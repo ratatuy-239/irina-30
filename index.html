@@ -35,7 +35,8 @@ h1{font-size:inherit;font-weight:inherit}
 .meta span:last-child{text-align:right}
 .photo{position:relative;width:100%;margin:1.5rem 0}
 .photo img{width:100%;height:auto;display:block}
-.hat{position:absolute;width:15%;left:66.5%;top:16.5%;transform:rotate(8deg)}
+.hat{position:absolute;width:15%;left:67.3%;top:17.3%;transform:rotate(8deg)}
+.hat.dog{left:42%;top:34.5%;transform:rotate(-10deg)}
 .lead{font-size:1.2rem;line-height:1.4;margin:2.25rem 0 1.75rem;max-width:30ch}
 .btn{font:500 1rem var(--font);text-transform:uppercase;letter-spacing:.06em;background:var(--rosa);color:var(--verde-scuro);border:0;border-radius:999px;padding:1.05rem 2.2rem;cursor:pointer;align-self:flex-start;transition:transform .15s}
 .btn:hover{transform:translateY(-2px)}
@@ -85,7 +86,8 @@ input[type=text]:focus{outline:0;border-bottom-color:var(--rosso)}
     </div>
     <div class="photo">
       <img src="foto.jpg" width="1040" height="1300" alt="Irina da piccola accanto a un grande cane nero">
-      <svg class="hat" viewBox="0 0 100 120" aria-hidden="true">
+      <svg class="hat dog" viewBox="0 0 100 120" aria-hidden="true"><use href="#cappellino"/></svg>
+      <svg class="hat" id="cappellino" viewBox="0 0 100 120" aria-hidden="true">
         <path d="M50 14 12 104q38 14 76 0z" fill="#f8c6c4"/>
         <path d="M41 36q9 5 18 0M33 56q17 8 34 0M25 76q25 10 50 0" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".8"/>
         <path d="M10 102q8 12 16 3 8 12 16 3 8 12 16 3 8 12 16 3 8 9 16-1" fill="none" stroke="#f29c9a" stroke-width="6" stroke-linecap="round"/>
