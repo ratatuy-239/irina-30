@@ -19,7 +19,9 @@
 }
 *{box-sizing:border-box}
 html{color-scheme:light}
-body{margin:0;background:var(--carta);color:var(--bruno);font-family:var(--font);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--verde-scuro);color:var(--bruno);font-family:var(--font);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+/* colonna larga come un telefono, anche su desktop */
+.phone{max-width:430px;margin:0 auto;background:var(--carta);min-height:100vh;overflow:hidden}
 .wrap{max-width:36rem;margin:0 auto;padding:0 20px}
 h1,h2,p{margin:0}
 [hidden]{display:none!important}
@@ -28,7 +30,7 @@ h1,h2,p{margin:0}
 /* poster */
 .poster{background:var(--verde);color:var(--rosa);padding:1.25rem 0 2rem}
 .poster .wrap{display:flex;flex-direction:column}
-.big{display:block;font-weight:500;text-transform:uppercase;letter-spacing:-.045em;line-height:.8;white-space:nowrap;font-size:30vw}
+.big{display:block;font-weight:500;text-transform:uppercase;letter-spacing:-.045em;line-height:.8;white-space:nowrap;font-size:min(30vw,129px)}
 h1{font-size:inherit;font-weight:inherit}
 .meta{display:flex;justify-content:space-between;gap:1rem;margin:1.1rem 0 0}
 .meta span:last-child{text-align:right}
@@ -47,7 +49,7 @@ h1{font-size:inherit;font-weight:inherit}
 .doodles{display:block;width:100%;height:auto;margin-bottom:2rem}
 .doodles *{fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .s-b{stroke:var(--bruno)} .s-r{stroke:var(--rosso)} .s-v{stroke:var(--verde)}
-.title{font-size:clamp(2.6rem,12vw,4.2rem);font-weight:600;text-transform:uppercase;letter-spacing:-.04em;line-height:.9;margin-bottom:1.75rem}
+.title{font-size:clamp(2.4rem,12vw,3.05rem);font-weight:600;text-transform:uppercase;letter-spacing:-.04em;line-height:.9;margin-bottom:1.75rem}
 .title em{font-style:normal;color:var(--rosso)}
 .rows{list-style:none;margin:0;padding:0}
 .rows li{display:grid;grid-template-columns:5.5rem 1fr;gap:1rem;padding:.9rem 0;border-bottom:1.5px solid var(--bruno);align-items:baseline;text-transform:uppercase;letter-spacing:.04em}
@@ -76,6 +78,7 @@ input[type=text]:focus{outline:0;border-bottom-color:var(--rosso)}
 </head>
 <body>
 
+<div class="phone">
 <header class="poster">
   <div class="wrap" id="poster">
     <h1><span class="big" data-fit>Irina</span></h1>
@@ -159,6 +162,7 @@ input[type=text]:focus{outline:0;border-bottom-color:var(--rosso)}
     </div>
   </section>
 </main>
+</div>
 
 <script>
 // Indirizzo a cui inviare le risposte (per esempio un modulo Formspree). Vuoto = solo anteprima.
