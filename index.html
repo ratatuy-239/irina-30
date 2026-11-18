@@ -30,14 +30,14 @@ h1,h2,p{margin:0}
 .poster .wrap{display:flex;flex-direction:column}
 .big{display:block;font-weight:500;text-transform:uppercase;letter-spacing:-.045em;line-height:.8;white-space:nowrap;font-size:30vw}
 h1{font-size:inherit;font-weight:inherit}
-.meta{display:flex;justify-content:space-between;gap:1rem;margin:1.1rem 0 1.25rem}
+.meta{display:flex;justify-content:space-between;gap:1rem;margin:1.1rem 0 2.75rem}
 .meta span:nth-child(2){text-align:center}
 .meta span:last-child{text-align:right}
 .photo{position:relative;width:74%;align-self:center;margin-bottom:1.5rem}
 .photo-box{aspect-ratio:4/5;background:var(--verde-scuro);overflow:hidden}
 .photo-box img{width:100%;height:100%;object-fit:cover;display:block}
 /* cappellino: spostare con left/top quando arriva la foto */
-.hat{position:absolute;width:26%;left:44%;top:-9%;transform:rotate(14deg)}
+.hat{position:absolute;width:22%;left:50%;top:-8%;transform:rotate(12deg)}
 .lead{font-size:1.2rem;line-height:1.4;margin:2.25rem 0 1.75rem;max-width:30ch}
 .btn{font:500 1rem var(--font);text-transform:uppercase;letter-spacing:.06em;background:var(--rosa);color:var(--verde-scuro);border:0;border-radius:999px;padding:1.05rem 2.2rem;cursor:pointer;align-self:flex-start;transition:transform .15s}
 .btn:hover{transform:translateY(-2px)}
@@ -87,8 +87,7 @@ input[type=text]:focus{outline:0;border-bottom-color:var(--rosso)}
     </div>
     <div class="photo">
       <div class="photo-box">
-        <!-- FOTO: mettere foto.jpg accanto a questo file e togliere il commento dalla riga sotto -->
-        <!-- <img src="foto.jpg" alt="Irina"> -->
+        <img src="foto.jpg" alt="Irina da piccola, che ride su una poltrona">
       </div>
       <svg class="hat" viewBox="0 0 100 120" aria-hidden="true">
         <path d="M50 14 12 104q38 14 76 0z" fill="#f8c6c4"/>
@@ -97,7 +96,7 @@ input[type=text]:focus{outline:0;border-bottom-color:var(--rosso)}
         <circle cx="50" cy="11" r="9" fill="#f29c9a"/>
       </svg>
     </div>
-    <span class="big" data-fit aria-hidden="true">30 anni</span>
+    <div aria-hidden="true"><span class="big" data-fit>30 anni</span></div>
     <p class="lead">Qui senza una festa non si può. Uniamo le mie due cose preferite: una cena buonissima e ballare con gli amici.</p>
     <button class="btn" type="button" id="go-rsvp">Io ci sono!</button>
   </div>
