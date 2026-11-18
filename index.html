@@ -26,7 +26,7 @@ h1,h2,p{margin:0}
 .caps{text-transform:uppercase;letter-spacing:.06em;font-size:.8rem;font-weight:500}
 
 /* poster */
-.poster{background:var(--verde);color:var(--rosa);padding:1.25rem 0 3rem}
+.poster{background:var(--verde);color:var(--rosa);padding:1.25rem 0 2rem}
 .poster .wrap{display:flex;flex-direction:column}
 .big{display:block;font-weight:500;text-transform:uppercase;letter-spacing:-.045em;line-height:.8;white-space:nowrap;font-size:30vw}
 h1{font-size:inherit;font-weight:inherit}
@@ -35,16 +35,16 @@ h1{font-size:inherit;font-weight:inherit}
 .meta span:last-child{text-align:right}
 .photo{position:relative;width:100%;margin:1.5rem 0}
 .photo img{width:100%;height:auto;display:block}
-.hat{position:absolute;width:15%;left:67.3%;top:17.3%;transform:rotate(8deg)}
+.hat{position:absolute;width:15%;left:68.6%;top:17.3%;transform:rotate(8deg)}
 .hat.dog{left:42%;top:34.5%;transform:rotate(-10deg)}
-.lead{font-size:1.2rem;line-height:1.4;margin:2.25rem 0 1.75rem;max-width:30ch}
-.btn{font:500 1rem var(--font);text-transform:uppercase;letter-spacing:.06em;background:var(--rosa);color:var(--verde-scuro);border:0;border-radius:999px;padding:1.05rem 2.2rem;cursor:pointer;align-self:flex-start;transition:transform .15s}
+.lead{font-size:1.2rem;line-height:1.4;margin:0 0 1.5rem;max-width:32ch}
+.btn{font:500 1rem var(--font);text-transform:uppercase;letter-spacing:.06em;background:var(--rosso);color:var(--carta);border:0;border-radius:999px;padding:1.05rem 2.2rem;cursor:pointer;align-self:flex-start;transition:transform .15s}
 .btn:hover{transform:translateY(-2px)}
 .btn:disabled{opacity:.5;cursor:default;transform:none}
 :focus-visible{outline:2px solid currentColor;outline-offset:3px}
 
 /* programma */
-.info{padding:3rem 0}
+.info{padding:3rem 0 4rem}
 .doodles{display:block;width:100%;height:auto;margin-bottom:2rem}
 .doodles *{fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .s-b{stroke:var(--bruno)} .s-r{stroke:var(--rosso)} .s-v{stroke:var(--verde)}
@@ -56,7 +56,9 @@ h1{font-size:inherit;font-weight:inherit}
 .rows small{display:block;font-size:.8rem;letter-spacing:.06em;opacity:.75}
 
 /* rsvp */
-.rsvp{padding:1rem 0 4rem}
+.sub{font-size:1.5rem;font-weight:600;text-transform:uppercase;letter-spacing:-.02em;line-height:1;margin:3rem 0 1.5rem}
+.wish{margin-top:3rem;padding-top:1.25rem;border-top:1.5px solid var(--bruno)}
+.wish a{color:var(--rosso);text-underline-offset:.2em}
 form{display:flex;flex-direction:column;gap:1.75rem}
 .field{display:flex;flex-direction:column;gap:.6rem;border:0;padding:0;margin:0;min-width:0}
 .field>label,.field>legend{padding:0}
@@ -69,7 +71,6 @@ input[type=text]:focus{outline:0;border-bottom-color:var(--rosso)}
 .option:has(input:checked){background:var(--rosa);border-color:var(--rosso)}
 .option:has(input:focus-visible){outline:2px solid var(--rosso);outline-offset:2px}
 .err{color:var(--rosso);font-size:.9rem}
-.rsvp .btn{background:var(--rosso);color:var(--carta)}
 .thanks{font-size:1.7rem;font-weight:500;letter-spacing:-.02em;line-height:1.2}
 .note{font-size:.9rem;opacity:.75;margin-top:.75rem}
 </style>
@@ -95,8 +96,6 @@ input[type=text]:focus{outline:0;border-bottom-color:var(--rosso)}
       </svg>
     </div>
     <div class="over" aria-hidden="true"><span class="big" data-fit>30 anni</span></div>
-    <p class="lead">Qui senza una festa non si può. Uniamo le mie due cose preferite: una cena buonissima e ballare con gli amici.</p>
-    <button class="btn" type="button" id="go-rsvp">Io ci sono!</button>
   </div>
 </header>
 
@@ -122,16 +121,13 @@ input[type=text]:focus{outline:0;border-bottom-color:var(--rosso)}
       </svg>
 
       <h2 class="title">Il program&shy;ma <em>della serata</em></h2>
+      <p class="lead">Qui senza una festa non si può. Uniamo le mie due cose preferite: una cena buonissima e ballare con gli amici.</p>
       <ol class="rows">
-        <li><span class="t">20:00</span><span>Circolo Vizioso<small>Cena</small></span></li>
+        <li><span class="t">20:00</span><span>Circolo Vizioso<small>Si mangia</small></span></li>
         <li><span class="t">00:00</span><span>Boccaccio<small>Si balla, da mezzanotte in poi</small></span></li>
       </ol>
-    </div>
-  </section>
 
-  <section class="rsvp" id="rsvp">
-    <div class="wrap">
-      <h2 class="title">Ci <em>sei?</em></h2>
+      <h3 class="sub" id="rsvp">RSVP</h3>
       <form id="form" novalidate>
         <div class="field">
           <label class="caps" for="nome">Il tuo nome</label>
@@ -139,30 +135,20 @@ input[type=text]:focus{outline:0;border-bottom-color:var(--rosso)}
           <p class="err" id="err-nome" hidden>Scrivi il tuo nome.</p>
         </div>
 
-        <fieldset class="field">
-          <legend class="caps">Porti un +1?</legend>
-          <div class="options">
-            <label class="option"><input type="radio" name="piu1" id="piu1-no" value="no" checked> No</label>
-            <label class="option"><input type="radio" name="piu1" id="piu1-si" value="si"> Sì</label>
-          </div>
-        </fieldset>
-
-        <div class="field" id="field-chi" hidden>
-          <label class="caps" for="chi">Chi è il tuo +1?</label>
+        <div class="field">
+          <label class="caps" for="chi">Vieni con qualcuno?</label>
           <input type="text" id="chi" name="chi">
-          <p class="err" id="err-chi" hidden>Scrivi chi porti.</p>
         </div>
 
-        <fieldset class="field">
-          <legend class="caps">A cosa vieni?</legend>
+        <div class="field" role="group" aria-label="A cosa vieni">
           <div class="options">
             <label class="option"><input type="checkbox" id="cena" name="cena"> Vengo a cena</label>
             <label class="option"><input type="checkbox" id="ballo" name="ballo"> Vengo a ballare</label>
           </div>
           <p class="err" id="err-cosa" hidden>Scegli almeno una delle due.</p>
-        </fieldset>
+        </div>
 
-        <button class="btn" type="submit" id="send">Io ci sono!</button>
+        <button class="btn" type="submit" id="send">Invia</button>
         <p class="err" id="err-send" hidden>Non sono riuscita a inviare la risposta. Riprova tra poco.</p>
       </form>
 
@@ -170,6 +156,9 @@ input[type=text]:focus{outline:0;border-bottom-color:var(--rosso)}
         <p class="thanks" id="thanks"></p>
         <p class="note" id="preview-note" hidden>Anteprima: le risposte non vengono ancora salvate.</p>
       </div>
+
+      <!-- WISHLIST: mettere il link vero al posto di # -->
+      <p class="wish">Se vuoi farmi un regalo, ecco la mia <a href="#">wishlist</a>.</p>
     </div>
   </section>
 </main>
@@ -198,28 +187,16 @@ fitBig();
 addEventListener("resize", fitBig);
 if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitBig);
 
-$("go-rsvp").addEventListener("click", () => {
-  const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  $("rsvp").scrollIntoView({behavior: calm ? "auto" : "smooth"});
-  $("nome").focus({preventScroll: true});
-});
-
-const syncPlusOne = () => { $("field-chi").hidden = !$("piu1-si").checked; };
-document.querySelectorAll('input[name="piu1"]').forEach(r => r.addEventListener("change", syncPlusOne));
-syncPlusOne();
-
 $("form").addEventListener("submit", async e => {
   e.preventDefault();
   const r = {
     nome: $("nome").value.trim(),
-    piu1: $("piu1-si").checked,
-    chi: $("piu1-si").checked ? $("chi").value.trim() : "",
+    chi: $("chi").value.trim(),
     cena: $("cena").checked,
     ballo: $("ballo").checked
   };
   const errors = [
     ["err-nome", !r.nome, "nome"],
-    ["err-chi", r.piu1 && !r.chi, "chi"],
     ["err-cosa", !r.cena && !r.ballo, "cena"]
   ];
   let first = null;
@@ -235,7 +212,7 @@ $("form").addEventListener("submit", async e => {
         headers: {"Content-Type": "application/json", "Accept": "application/json"},
         body: JSON.stringify({
           nome: r.nome,
-          "+1": r.piu1 ? r.chi : "no",
+          "+1": r.chi || "no",
           cena: r.cena ? "sì" : "no",
           ballo: r.ballo ? "sì" : "no"
         })
@@ -251,7 +228,7 @@ $("form").addEventListener("submit", async e => {
   }
 
   const where = r.cena && r.ballo ? "a cena e poi a ballare" : r.cena ? "a cena" : "a ballare";
-  $("thanks").textContent = "Grazie, " + r.nome + "! Ci vediamo " + where + (r.piu1 ? ", insieme a " + r.chi : "") + ".";
+  $("thanks").textContent = "Grazie, " + r.nome + "! Ci vediamo " + where + (r.chi ? ", insieme a " + r.chi : "") + ".";
   $("form").hidden = true;
   $("done").hidden = false;
   $("done").focus();
