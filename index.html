@@ -6,146 +6,175 @@
 <title>Irina compie 30 anni</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap">
 <style>
 :root{
-  --bg:#fbfaf8;
-  --ink:#141414;
-  --muted:#8a8782;
-  --line:#e4e1dc;
-  --photo:#d9d6d0;
-  --error:#b3261e;
-  --font:"Inter",-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --verde:#5d7d55;
+  --verde-scuro:#4c6a45;
+  --rosa:#f8c6c4;
+  --carta:#efede6;
+  --bruno:#56401f;
+  --rosso:#b9442e;
+  --font:"Inter Tight","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 *{box-sizing:border-box}
 html{color-scheme:light}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
-.wrap{max-width:34rem;margin:0 auto;padding:0 20px}
+body{margin:0;background:var(--carta);color:var(--bruno);font-family:var(--font);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:36rem;margin:0 auto;padding:0 20px}
 h1,h2,p{margin:0}
-h1{font-size:clamp(2.6rem,9vw,4rem);font-weight:500;letter-spacing:-.035em;line-height:1;text-wrap:balance}
-h2{font-size:.8rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 [hidden]{display:none!important}
+.caps{text-transform:uppercase;letter-spacing:.06em;font-size:.8rem;font-weight:500}
 
-.hero{padding:3.5rem 0 4.5rem;display:flex;flex-direction:column;gap:2rem}
-.date{font-size:.8rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.lead{font-size:1.2rem;color:var(--ink);max-width:30ch}
-.photo{position:relative;aspect-ratio:4/5;width:100%;background:var(--photo);border-radius:4px;overflow:hidden}
-.photo img{width:100%;height:100%;object-fit:cover;display:block}
-.photo svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
-.photo path,.photo polyline{fill:none;stroke:#fff;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
-.btn{font:500 1rem var(--font);background:var(--ink);color:var(--bg);border:0;border-radius:999px;padding:1rem 2rem;cursor:pointer;align-self:flex-start;transition:opacity .15s}
-.btn:hover{opacity:.8}
-.btn:disabled{opacity:.5;cursor:default}
-:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+/* poster */
+.poster{background:var(--verde);color:var(--rosa);padding:1.25rem 0 3rem}
+.poster .wrap{display:flex;flex-direction:column}
+.big{display:block;font-weight:500;text-transform:uppercase;letter-spacing:-.045em;line-height:.8;white-space:nowrap;font-size:30vw}
+h1{font-size:inherit;font-weight:inherit}
+.meta{display:flex;justify-content:space-between;gap:1rem;margin:1.1rem 0 1.25rem}
+.meta span:nth-child(2){text-align:center}
+.meta span:last-child{text-align:right}
+.photo{position:relative;width:74%;align-self:center;margin-bottom:1.5rem}
+.photo-box{aspect-ratio:4/5;background:var(--verde-scuro);overflow:hidden}
+.photo-box img{width:100%;height:100%;object-fit:cover;display:block}
+/* cappellino: spostare con left/top quando arriva la foto */
+.hat{position:absolute;width:26%;left:44%;top:-9%;transform:rotate(14deg)}
+.lead{font-size:1.2rem;line-height:1.4;margin:2.25rem 0 1.75rem;max-width:30ch}
+.btn{font:500 1rem var(--font);text-transform:uppercase;letter-spacing:.06em;background:var(--rosa);color:var(--verde-scuro);border:0;border-radius:999px;padding:1.05rem 2.2rem;cursor:pointer;align-self:flex-start;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn:disabled{opacity:.5;cursor:default;transform:none}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
 
-section{border-top:1px solid var(--line);padding:3rem 0;display:flex;flex-direction:column;gap:2rem}
-.stops{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
-.stops li{display:grid;grid-template-columns:5rem 1fr;gap:1rem;padding:1.25rem 0;align-items:baseline}
-.stops li+li{border-top:1px solid var(--line)}
-.time{font-variant-numeric:tabular-nums;color:var(--muted)}
-.place{font-size:1.5rem;font-weight:500;letter-spacing:-.02em;line-height:1.2}
-.what{color:var(--muted)}
+/* programma */
+.info{padding:3rem 0}
+.doodles{display:block;width:100%;height:auto;margin-bottom:2rem}
+.doodles *{fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.s-b{stroke:var(--bruno)} .s-r{stroke:var(--rosso)} .s-v{stroke:var(--verde)}
+.title{font-size:clamp(2.6rem,12vw,4.2rem);font-weight:600;text-transform:uppercase;letter-spacing:-.04em;line-height:.9;margin-bottom:1.75rem}
+.title em{font-style:normal;color:var(--rosso)}
+.rows{list-style:none;margin:0;padding:0}
+.rows li{display:grid;grid-template-columns:5.5rem 1fr;gap:1rem;padding:.9rem 0;border-bottom:1.5px solid var(--bruno);align-items:baseline;text-transform:uppercase;letter-spacing:.04em}
+.rows .t{font-weight:600;font-variant-numeric:tabular-nums}
+.rows small{display:block;font-size:.8rem;letter-spacing:.06em;opacity:.75}
 
+/* rsvp */
+.rsvp{padding:1rem 0 4rem}
 form{display:flex;flex-direction:column;gap:1.75rem}
 .field{display:flex;flex-direction:column;gap:.6rem;border:0;padding:0;margin:0;min-width:0}
-.field>label,.field>legend{font-weight:500;padding:0}
+.field>label,.field>legend{padding:0}
 .field>legend{margin-bottom:.6rem}
-input[type=text]{font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--ink);border-radius:0;padding:.5rem 0;width:100%}
-input[type=text]:focus{outline:0;border-bottom-width:2px;padding-bottom:calc(.5rem - 1px)}
+input[type=text]{font:inherit;color:var(--bruno);background:transparent;border:0;border-bottom:1.5px solid var(--bruno);border-radius:0;padding:.4rem 0;width:100%}
+input[type=text]:focus{outline:0;border-bottom-color:var(--rosso)}
 .options{display:flex;flex-wrap:wrap;gap:.6rem}
-.option{display:flex;align-items:center;gap:.6rem;border:1px solid var(--line);border-radius:999px;padding:.65rem 1.1rem;cursor:pointer;background:#fff}
-.option input{margin:0;width:1.05rem;height:1.05rem;accent-color:var(--ink)}
-.option:has(input:checked){border-color:var(--ink)}
-.option:has(input:focus-visible){outline:2px solid var(--ink);outline-offset:2px}
-.err{color:var(--error);font-size:.9rem}
-.thanks{font-size:1.5rem;font-weight:500;letter-spacing:-.02em;line-height:1.25}
-.muted{color:var(--muted);font-size:.9rem}
-footer{border-top:1px solid var(--line);padding:2rem 0 3rem;color:var(--muted);font-size:.9rem}
+.option{display:flex;align-items:center;gap:.6rem;border:1.5px solid var(--bruno);border-radius:999px;padding:.6rem 1.1rem;cursor:pointer}
+.option input{margin:0;width:1.05rem;height:1.05rem;accent-color:var(--rosso)}
+.option:has(input:checked){background:var(--rosa);border-color:var(--rosso)}
+.option:has(input:focus-visible){outline:2px solid var(--rosso);outline-offset:2px}
+.err{color:var(--rosso);font-size:.9rem}
+.rsvp .btn{background:var(--rosso);color:var(--carta)}
+.thanks{font-size:1.7rem;font-weight:500;letter-spacing:-.02em;line-height:1.2}
+.note{font-size:.9rem;opacity:.75;margin-top:.75rem}
 </style>
 </head>
 <body>
 
-<main class="wrap">
-  <header class="hero">
-    <p class="date">Sabato 12 dicembre</p>
-    <h1>Irina compie 30&nbsp;anni!</h1>
+<header class="poster">
+  <div class="wrap" id="poster">
+    <h1><span class="big" data-fit>Irina</span></h1>
+    <div class="meta caps">
+      <span>Sabato<br>12 dicembre</span>
+      <span>Cena e<br>pista da ballo</span>
+      <span>Dalle<br>20:00</span>
+    </div>
     <div class="photo">
-      <!-- FOTO: mettere foto.jpg accanto a questo file e togliere il commento dalla riga sotto -->
-      <!-- <img src="foto.jpg" alt="Irina"> -->
-      <svg viewBox="0 0 400 500" aria-hidden="true">
-        <!-- corona -->
-        <polyline points="150,92 158,48 180,74 200,40 220,74 242,48 250,92 150,92"/>
-        <!-- scintille -->
-        <path d="M60 120v28M46 134h28"/>
-        <path d="M338 70v20M328 80h20"/>
-        <path d="M330 400v28M316 414h28M320 404l20 20M340 404l-20 20"/>
-        <!-- palloncino -->
-        <path d="M70 330c-22 0-34 18-34 38s14 40 34 40 34-20 34-40-12-38-34-38zM70 408q-10 24 2 44t-4 40"/>
-        <!-- coriandoli -->
-        <path d="M110 60l8-10M290 40l4 12M360 220l12-4M40 240l10 6M280 460l10-8"/>
+      <div class="photo-box">
+        <!-- FOTO: mettere foto.jpg accanto a questo file e togliere il commento dalla riga sotto -->
+        <!-- <img src="foto.jpg" alt="Irina"> -->
+      </div>
+      <svg class="hat" viewBox="0 0 100 120" aria-hidden="true">
+        <path d="M50 14 12 104q38 14 76 0z" fill="#f8c6c4"/>
+        <path d="M41 36q9 5 18 0M33 56q17 8 34 0M25 76q25 10 50 0" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".8"/>
+        <path d="M10 102q8 12 16 3 8 12 16 3 8 12 16 3 8 12 16 3 8 9 16-1" fill="none" stroke="#f29c9a" stroke-width="6" stroke-linecap="round"/>
+        <circle cx="50" cy="11" r="9" fill="#f29c9a"/>
       </svg>
     </div>
+    <span class="big" data-fit aria-hidden="true">30 anni</span>
     <p class="lead">Qui senza una festa non si può. Uniamo le mie due cose preferite: una cena buonissima e ballare con gli amici.</p>
     <button class="btn" type="button" id="go-rsvp">Io ci sono!</button>
-  </header>
+  </div>
+</header>
 
-  <section>
-    <h2>Programma</h2>
-    <ol class="stops">
-      <li>
-        <span class="time">20:00</span>
-        <div><p class="place">Circolo Vizioso</p><p class="what">Cena</p></div>
-      </li>
-      <li>
-        <span class="time">00:00</span>
-        <div><p class="place">Boccaccio</p><p class="what">Si balla, da mezzanotte in poi</p></div>
-      </li>
-    </ol>
-  </section>
+<main>
+  <section class="info">
+    <div class="wrap">
+      <svg class="doodles" viewBox="0 0 520 130" aria-hidden="true">
+        <!-- candela -->
+        <path class="s-b" d="M30 118h30M36 118V62h18v56M45 62v-8"/>
+        <path class="s-r" d="M45 50c-9-10 0-18 0-28 8 10 9 18 0 28z"/>
+        <!-- fetta di torta -->
+        <path class="s-r" d="M110 84 196 60l8 26-90 26zM110 84l4 28M118 96l84-24"/>
+        <path class="s-r" d="M112 82c6-14 20-10 22-2 6-16 22-12 24-4 6-14 22-10 24-2 4-12 16-8 14-14"/>
+        <circle class="s-r" cx="150" cy="52" r="7"/>
+        <!-- martini -->
+        <path class="s-v" d="M252 30h76l-38 44zM290 74v40M270 116h40M262 42h56"/>
+        <circle class="s-v" cx="296" cy="50" r="6"/><path class="s-v" d="M300 45 314 22"/>
+        <!-- palla da discoteca -->
+        <circle class="s-b" cx="410" cy="72" r="36"/>
+        <path class="s-b" d="M410 12v24M374 72h72M380 52h60M380 92h60M410 36c-16 12-16 60 0 72M410 36c16 12 16 60 0 72"/>
+        <!-- scintille -->
+        <path class="s-r" d="M478 28v22M467 39h22M492 86v14M485 93h14"/>
+      </svg>
 
-  <section id="rsvp">
-    <h2>Conferma</h2>
-    <form id="form" novalidate>
-      <div class="field">
-        <label for="nome">Il tuo nome</label>
-        <input type="text" id="nome" name="nome" autocomplete="name">
-        <p class="err" id="err-nome" hidden>Scrivi il tuo nome.</p>
-      </div>
-
-      <fieldset class="field">
-        <legend>Porti un +1?</legend>
-        <div class="options">
-          <label class="option"><input type="radio" name="piu1" id="piu1-no" value="no" checked> No</label>
-          <label class="option"><input type="radio" name="piu1" id="piu1-si" value="si"> Sì</label>
-        </div>
-      </fieldset>
-
-      <div class="field" id="field-chi" hidden>
-        <label for="chi">Chi è il tuo +1?</label>
-        <input type="text" id="chi" name="chi">
-        <p class="err" id="err-chi" hidden>Scrivi chi porti.</p>
-      </div>
-
-      <fieldset class="field">
-        <legend>A cosa vieni?</legend>
-        <div class="options">
-          <label class="option"><input type="checkbox" id="cena" name="cena"> Vengo a cena</label>
-          <label class="option"><input type="checkbox" id="ballo" name="ballo"> Vengo a ballare</label>
-        </div>
-        <p class="err" id="err-cosa" hidden>Scegli almeno una delle due.</p>
-      </fieldset>
-
-      <button class="btn" type="submit" id="send">Io ci sono!</button>
-      <p class="err" id="err-send" hidden>Non sono riuscita a inviare la risposta. Riprova tra poco.</p>
-    </form>
-
-    <div id="done" hidden tabindex="-1">
-      <p class="thanks" id="thanks"></p>
-      <p class="muted" id="preview-note" hidden>Anteprima: le risposte non vengono ancora salvate.</p>
+      <h2 class="title">Il program&shy;ma <em>della serata</em></h2>
+      <ol class="rows">
+        <li><span class="t">20:00</span><span>Circolo Vizioso<small>Cena</small></span></li>
+        <li><span class="t">00:00</span><span>Boccaccio<small>Si balla, da mezzanotte in poi</small></span></li>
+      </ol>
     </div>
   </section>
 
-  <footer>Ti aspetto. Irina</footer>
+  <section class="rsvp" id="rsvp">
+    <div class="wrap">
+      <h2 class="title">Ci <em>sei?</em></h2>
+      <form id="form" novalidate>
+        <div class="field">
+          <label class="caps" for="nome">Il tuo nome</label>
+          <input type="text" id="nome" name="nome" autocomplete="name">
+          <p class="err" id="err-nome" hidden>Scrivi il tuo nome.</p>
+        </div>
+
+        <fieldset class="field">
+          <legend class="caps">Porti un +1?</legend>
+          <div class="options">
+            <label class="option"><input type="radio" name="piu1" id="piu1-no" value="no" checked> No</label>
+            <label class="option"><input type="radio" name="piu1" id="piu1-si" value="si"> Sì</label>
+          </div>
+        </fieldset>
+
+        <div class="field" id="field-chi" hidden>
+          <label class="caps" for="chi">Chi è il tuo +1?</label>
+          <input type="text" id="chi" name="chi">
+          <p class="err" id="err-chi" hidden>Scrivi chi porti.</p>
+        </div>
+
+        <fieldset class="field">
+          <legend class="caps">A cosa vieni?</legend>
+          <div class="options">
+            <label class="option"><input type="checkbox" id="cena" name="cena"> Vengo a cena</label>
+            <label class="option"><input type="checkbox" id="ballo" name="ballo"> Vengo a ballare</label>
+          </div>
+          <p class="err" id="err-cosa" hidden>Scegli almeno una delle due.</p>
+        </fieldset>
+
+        <button class="btn" type="submit" id="send">Io ci sono!</button>
+        <p class="err" id="err-send" hidden>Non sono riuscita a inviare la risposta. Riprova tra poco.</p>
+      </form>
+
+      <div id="done" hidden tabindex="-1">
+        <p class="thanks" id="thanks"></p>
+        <p class="note" id="preview-note" hidden>Anteprima: le risposte non vengono ancora salvate.</p>
+      </div>
+    </div>
+  </section>
 </main>
 
 <script>
@@ -153,6 +182,24 @@ footer{border-top:1px solid var(--line);padding:2rem 0 3rem;color:var(--muted);f
 const FORM_ENDPOINT = "";
 
 const $ = id => document.getElementById(id);
+
+// Le scritte grandi occupano tutta la larghezza del poster.
+function fitBig() {
+  const box = $("poster"), cs = getComputedStyle(box);
+  const w = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+  document.querySelectorAll("[data-fit]").forEach(el => {
+    el.style.display = "inline-block";
+    el.style.fontSize = "100px";
+    const size = 100 * w / el.getBoundingClientRect().width;
+    el.style.fontSize = size + "px";
+    el.style.display = "";
+    // il tracking negativo sporge a destra dell'ultima lettera: lo compenso
+    el.style.marginRight = (-0.045 * size) + "px";
+  });
+}
+fitBig();
+addEventListener("resize", fitBig);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitBig);
 
 $("go-rsvp").addEventListener("click", () => {
   const calm = matchMedia("(prefers-reduced-motion: reduce)").matches;
