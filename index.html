@@ -31,12 +31,11 @@ h1,h2,p{margin:0}
 .big{display:block;font-weight:500;text-transform:uppercase;letter-spacing:-.045em;line-height:.8;white-space:nowrap;font-size:30vw}
 h1{font-size:inherit;font-weight:inherit}
 .meta{display:flex;justify-content:space-between;gap:1rem;margin:1.1rem 0 0}
-.meta span:nth-child(2){text-align:center}
 .meta span:last-child{text-align:right}
-.photo{position:relative;width:68%;align-self:center;margin:6rem 0 -3%}
+.photo{position:relative;width:68%;align-self:center;margin:-1rem 0 -13%;z-index:1}
 .photo img{width:100%;height:auto;display:block}
 .hat{position:absolute;width:30%;left:30%;top:-14.5%;transform:rotate(-9deg)}
-.over{position:relative;z-index:1}
+.over{position:relative;z-index:2}
 .lead{font-size:1.2rem;line-height:1.4;margin:0 0 1.5rem;max-width:32ch}
 .btn{font:500 1rem var(--font);text-transform:uppercase;letter-spacing:.06em;background:var(--rosso);color:var(--carta);border:0;border-radius:999px;padding:1.05rem 2.2rem;cursor:pointer;align-self:flex-start;transition:transform .15s}
 .btn:hover{transform:translateY(-2px)}
@@ -82,7 +81,6 @@ input[type=text]:focus{outline:0;border-bottom-color:var(--rosso)}
     <h1><span class="big" data-fit>Irina</span></h1>
     <div class="meta caps">
       <span>Sabato<br>12 dicembre</span>
-      <span>Cena e<br>pista da ballo</span>
       <span>Dalle<br>20:00</span>
     </div>
     <div class="photo">
